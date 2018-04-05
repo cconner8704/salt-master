@@ -5,6 +5,7 @@ MAINTAINER Chris Conner <chrism.conner@gmail.com>
 RUN set -ex                           \
     && yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm \
     && yum install -y salt-master \
+    && yum install -y net-tools \
     && yum clean -y expire-cache
 
 # volumes
