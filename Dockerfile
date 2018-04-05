@@ -25,9 +25,5 @@ RUN echo "master: localhost" >> /etc/salt/minion
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-
-RUN echo "master: localhost" >> /etc/salt/minion
-
-
 # entrypoint
 CMD /entrypoint.sh
