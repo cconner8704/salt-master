@@ -4,7 +4,8 @@ MAINTAINER Chris Conner <chrism.conner@gmail.com>
 #https://repo.saltstack.com/#rhel
 RUN set -ex                           \
     && yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm \
-    && yum clean -y expire-cache
+    && yum clean -y expire-cache \
+    && yum install -y salt-master
 
 # volumes
 VOLUME /var/cache/salt      \
