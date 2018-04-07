@@ -12,8 +12,7 @@ RUN set -ex                           \
     && yum install -y python-pip \
     && yum install -y net-tools \
     && yum install -y iproute \
-    && yum clean -y expire-cache &&
-    
+    && yum clean -y expire-cache
 
 # volumes
 VOLUME /var/cache/salt      \
