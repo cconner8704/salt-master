@@ -3,12 +3,17 @@ MAINTAINER Chris Conner <chrism.conner@gmail.com>
 
 #https://repo.saltstack.com/#rhel
 RUN set -ex                           \
+    && yum install epel-release -y \
+    && yum update -y \
     && yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm \
     && yum install -y salt-master \
     && yum install -y salt-cloud \
+    && /usr/bin/pip install pyvmomi \
+    && yum install -y python-pip \
     && yum install -y net-tools \
     && yum install -y iproute \
-    && yum clean -y expire-cache
+    && yum clean -y expire-cache &&
+    
 
 # volumes
 VOLUME /var/cache/salt      \
