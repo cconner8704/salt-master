@@ -18,8 +18,7 @@ RUN set -ex                           \
 # volumes
 VOLUME /var/cache/salt      \
        /var/log/salt        \
-       /etc/salt/pki        \
-       /etc/salt/master.d   \
+       /etc/salt        \
        /srv/salt 
 
 # ports
@@ -27,6 +26,7 @@ EXPOSE 4505 4506
 
 #Extra Config
 RUN mkdir -p /etc/salt/master.d/ && echo "auto_accept: True" >> /etc/salt/master.d/docker.conf
+RUN mkdir -p /etc/salt/cloud.profiles.d/
 RUN echo "master: localhost" >> /etc/salt/minion
 
 # add run file
