@@ -8,8 +8,8 @@ RUN set -ex                           \
     && yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm \
     && yum install -y salt-master \
     && yum install -y salt-cloud \
-    && /usr/bin/pip install pyvmomi \
     && yum install -y python-pip \
+    && /usr/bin/pip install pyvmomi \
     && yum install -y net-tools \
     && yum install -y iproute \
     && yum clean -y expire-cache
