@@ -12,6 +12,8 @@ RUN set -ex                           \
     && /usr/bin/pip install pyvmomi \
     && yum install -y net-tools \
     && yum install -y iproute \
+    && yum install -y vim \
+    && yum install -y less \
     && yum clean -y expire-cache
 
 # volumes
